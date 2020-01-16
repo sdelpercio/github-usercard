@@ -50,12 +50,12 @@ const followersArray = [];
   </div>
 </div>
 */
-function createCard(object) {
+function createCard(github) {
   const card = document.createElement('div'),
         img = document.createElement('img'),
         cardInfo = document.createElement('div'),
         userName = document.createElement('h3'),
-        usersUsername = document.createElement('p'),
+        userUsername = document.createElement('p'),
         userlocation = document.createElement('p'),
         userProfile = document.createElement('p'),
         userLink = document.createElement('a'),
@@ -63,7 +63,15 @@ function createCard(object) {
         userFollowing = document.createElement('p'),
         userBio = document.createElement('p')
   
-        
+  card.classList.add('card');
+  img.src = github.data.avatar_url;
+  cardInfo.classList.add('card-info');
+  userName.classList.add('name');
+  userUsername.classList.add('username');
+  userLink.href = github.data.html_url;
+
+  
+
 }
 
 /* List of LS Instructors Github username's: 
