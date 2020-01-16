@@ -56,7 +56,7 @@ function createCard(github) {
         cardInfo = document.createElement('div'),
         userName = document.createElement('h3'),
         userUsername = document.createElement('p'),
-        userlocation = document.createElement('p'),
+        userLocation = document.createElement('p'),
         userProfile = document.createElement('p'),
         userLink = document.createElement('a'),
         userFollowers = document.createElement('p'),
@@ -70,7 +70,14 @@ function createCard(github) {
   userUsername.classList.add('username');
   userLink.href = github.data.html_url;
 
-  
+  userName.textContent = github.data.name;
+  userUsername.textContent = github.data.login;
+  userLocation.textContent = `Location: ${github.data.location}`;
+  userProfile.textContent = 'Profile: ';
+  userLink.textContent = github.data.html_url;
+  userFollowers.textContent = github.data.followers;
+  userFollowing.textContent = github.data.following;
+  userBio.textContent = github.data.bio;
 
 }
 
