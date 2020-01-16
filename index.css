@@ -91,21 +91,33 @@ body {
   width: 100%;
 }
 
+.card--opened {
+  width: 100% !important;
+}
+
 .card {
-  width: 100%;
+  width: 25%;
   padding: 20px;
-  display: flex;
   border-radius: 5px;
   box-shadow: 0 1px 6px -2px #000;
   background-color: #FFF;
+  margin: 0 auto;
+  display: flex;
   margin-bottom: 30px;
 }
+.card-info {
+  display: none;
+}
+
 
 .card img {
   width: 150px;
   height: 150px;
   border-radius: 3px;
   margin-right: 20px;
+}
+.card img:hover {
+  cursor: pointer;
 }
 
 .card .name {
