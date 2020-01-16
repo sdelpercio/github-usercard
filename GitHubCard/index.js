@@ -106,9 +106,27 @@ function createCard(github) {
   cardInfo.append(userFollowing);
   cardInfo.append(userBio);
 
-  img.addEventListener('click', () => {
+  img.addEventListener('click', (event) => {
     card.classList.toggle('card--opened');
     cardInfo.classList.toggle('card-info');
+
+    console.log(event.target.parentElement);
+
+    if (event.target.parentElement.classList.contains('card--opened')) {
+      gsap.from(event.target.parentElement, {
+        duration: 0.75,
+        scale: 0,
+        opacity: 0,
+        y: 100
+      });
+    } else {
+      gsap.from(event.target.parentElement, {
+        duration: 0.75,
+        scale: 0,
+        opacity: 0,
+        y: -100
+        });
+    }
   });
 
   return card;
