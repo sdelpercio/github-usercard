@@ -4,7 +4,8 @@
 */
 axios.get('https://api.github.com/users/sdelpercio')
 .then(res => {
-  console.log(res);
+  console.log(res.data.login);
+  document.querySelector('.cards').append(createCard(res.data));
 })
 .catch(err => {
   console.log(err);
@@ -64,20 +65,20 @@ function createCard(github) {
         userBio = document.createElement('p')
   
   card.classList.add('card');
-  img.src = github.data.avatar_url;
+  img.src = github.avatar_url;
   cardInfo.classList.add('card-info');
   userName.classList.add('name');
   userUsername.classList.add('username');
-  userLink.href = github.data.html_url;
+  userLink.href = github.html_url;
 
-  userName.textContent = github.data.name;
-  userUsername.textContent = github.data.login;
-  userLocation.textContent = `Location: ${github.data.location}`;
+  userName.textContent = github.name;
+  userUsername.textContent = github.login;
+  userLocation.textContent = `Location: ${github.location}`;
   userProfile.textContent = 'Profile: ';
-  userLink.textContent = github.data.html_url;
-  userFollowers.textContent = github.data.followers;
-  userFollowing.textContent = github.data.following;
-  userBio.textContent = github.data.bio;
+  userLink.textContent = github.html_url;
+  userFollowers.textContent = `Followers: ${github.followers}`;
+  userFollowing.textContent = `Following: ${github.following}`;
+  userBio.textContent = `Bio: ${github.bio}`;
 
   card.append(img);
   card.append(cardInfo);
