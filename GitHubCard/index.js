@@ -106,6 +106,11 @@ function createCard(github) {
   cardInfo.append(userFollowing);
   cardInfo.append(userBio);
 
+  img.addEventListener('click', () => {
+    card.classList.toggle('card--opened');
+    cardInfo.classList.toggle('card-info');
+  });
+
   return card;
 }
 
