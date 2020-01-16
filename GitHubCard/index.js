@@ -79,6 +79,18 @@ function createCard(github) {
   userFollowing.textContent = github.data.following;
   userBio.textContent = github.data.bio;
 
+  card.append(img);
+  card.append(cardInfo);
+  cardInfo.append(userName);
+  cardInfo.append(userUsername);
+  cardInfo.append(userLocation);
+  cardInfo.append(userProfile);
+  userProfile.append(userLink);
+  cardInfo.append(userFollowers);
+  cardInfo.append(userFollowing);
+  cardInfo.append(userBio);
+
+  return card;
 }
 
 /* List of LS Instructors Github username's: 
