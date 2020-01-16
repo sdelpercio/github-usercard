@@ -2,7 +2,13 @@
            (replacing the palceholder with your Github name):
            https://api.github.com/users/<your name>
 */
-
+axios.get('https://api.github.com/users/sdelpercio')
+.then(res => {
+  console.log(res);
+})
+.catch(err => {
+  console.log(err);
+})
 /* Step 2: Inspect and study the data coming back, this is YOUR 
    github info! You will need to understand the structure of this 
    data in order to use it to build your component function 
@@ -43,8 +49,22 @@ const followersArray = [];
     <p>Bio: {users bio}</p>
   </div>
 </div>
-
 */
+function createCard(object) {
+  const card = document.createElement('div'),
+        img = document.createElement('img'),
+        cardInfo = document.createElement('div'),
+        userName = document.createElement('h3'),
+        usersUsername = document.createElement('p'),
+        userlocation = document.createElement('p'),
+        userProfile = document.createElement('p'),
+        userLink = document.createElement('a'),
+        userFollowers = document.createElement('p'),
+        userFollowing = document.createElement('p'),
+        userBio = document.createElement('p')
+  
+        
+}
 
 /* List of LS Instructors Github username's: 
   tetondan
